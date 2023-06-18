@@ -7,11 +7,9 @@ sudo add-apt-repository ppa:ondrej/php -y
 # Menginstal Apache2
 sudo apt install apache2 -y
 
-# Menambahkan konfigurasi ke file apache2.conf
-echo "<Directory /var/www/>
-AllowOverride all
-Require all granted
-</Directory>" | sudo tee -a /etc/apache2/apache2.conf
+# Mengedit file konfigurasi apache2.conf
+sudo sed -i 's/AllowOverride None/AllowOverride all/g' /etc/apache2/apache2.conf
+sudo sed -i 's/Require all denied/Require all granted/g' /etc/apache2/apache2.conf
 
 # Mengaktifkan modul rewrite
 sudo a2enmod rewrite

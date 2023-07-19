@@ -4,6 +4,8 @@ sudo apt-get update
 # Menambahkan repository PHP
 sudo add-apt-repository ppa:ondrej/php -y
 
+sudo apt-get update
+
 # Menginstal Apache2
 sudo apt install apache2 -y
 
